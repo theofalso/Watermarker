@@ -6,7 +6,6 @@ from PIL import Image, ImageEnhance, ImageSequence
 
 class WatermarkApp:
     def __init__(self, root):
-        """Initializes the application UI and state."""
         self.root = root
         self.root.title("Watermark Applicator")
         self.root.geometry("500x400")
@@ -64,12 +63,12 @@ class WatermarkApp:
         main_frame.columnconfigure(1, weight=1)
 
     def create_directories(self):
-        """Ensures the input, output, and watermark folders exist."""
+
         for folder in ['input', 'output', 'watermark']:
             os.makedirs(os.path.join(self.base_path, folder), exist_ok=True)
 
     def process_images(self):
-        """Handles the core logic of finding images and applying the watermark."""
+
         self.status_var.set("Processing...")
         self.root.update_idletasks()
 
@@ -180,4 +179,5 @@ if __name__ == "__main__":
     root = Tk()
     app = WatermarkApp(root)
     root.mainloop()
+
 
